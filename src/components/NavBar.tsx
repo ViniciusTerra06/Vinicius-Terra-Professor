@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { siteConfig } from "@/config/site";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -14,17 +14,32 @@ const navLinks = [
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate(`/${href}`);
+    } else {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="font-signature text-3xl text-foreground hover:text-primary transition-colors">
+      <div className="w-full flex h-16 items-center justify-between px-6 md:px-12 lg:px-20">
+        <Link 
+          to="/" 
+          onClick={(e) => {
+            if (location.pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="font-display text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+        >
           {siteConfig.name}
         </Link>
 
@@ -39,12 +54,6 @@ const NavBar = () => {
               {link.label}
             </button>
           ))}
-          <Link
-            to="/blog"
-            className="text-sm text-muted-foreground transition-colors hover:text-primary"
-          >
-            Blog
-          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -76,13 +85,6 @@ const NavBar = () => {
                   {link.label}
                 </button>
               ))}
-              <Link
-                to="/blog"
-                onClick={() => setIsOpen(false)}
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Blog
-              </Link>
             </div>
           </motion.div>
         )}

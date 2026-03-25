@@ -27,7 +27,6 @@ const Footer = () => {
                 { label: "Depoimentos", href: "#depoimentos" },
                 { label: "FAQ", href: "#faq" },
                 { label: "Contato", href: "#contato" },
-                { label: "Blog", href: "/blog" },
               ].map((l) => (
                 <a
                   key={l.label}
