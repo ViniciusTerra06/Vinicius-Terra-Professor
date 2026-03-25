@@ -37,10 +37,10 @@ const FloatingWhatsApp = () => {
             href="https://wa.me/5551997192049?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20e%20consultorias!"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-colors hover:bg-[#20bd5a]"
+            className="relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-xl transition-colors hover:bg-whatsapp-dark"
             draggable="false"
           >
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-40"></span>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-40"></span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
