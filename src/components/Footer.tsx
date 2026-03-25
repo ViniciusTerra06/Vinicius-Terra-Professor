@@ -23,7 +23,8 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               {[
                 { label: "Sobre", href: "#sobre" },
-                { label: "Como Funciona", href: "#como-funciona" },
+                { label: "Aulas", href: "#como-funciona" },
+                { label: "Consultorias", href: "#consultoria" },
                 { label: "Depoimentos", href: "#depoimentos" },
                 { label: "FAQ", href: "#faq" },
                 { label: "Contato", href: "#contato" },

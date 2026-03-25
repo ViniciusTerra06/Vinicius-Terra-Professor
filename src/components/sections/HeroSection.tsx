@@ -61,7 +61,7 @@ const HeroSection = () => {
               href="#como-funciona"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:bg-primary/90 glow-teal"
             >
-              Como funciona? <ArrowRight size={16} />
+              Aulas e Consultorias <ArrowRight size={16} />
             </a>
             <a
               href="#sobre"
