@@ -58,10 +58,10 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#cursos"
+              href="#como-funciona"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:bg-primary/90 glow-teal"
             >
-              Ver cursos <ArrowRight size={16} />
+              Como funciona? <ArrowRight size={16} />
             </a>
             <a
               href="#sobre"
