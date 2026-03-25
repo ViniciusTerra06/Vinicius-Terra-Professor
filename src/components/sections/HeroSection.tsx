@@ -52,8 +52,8 @@ const HeroSection = () => {
           </h1>
 
           <p className="mb-8 max-w-xl text-lg text-muted-foreground">
-            Transformo processos manuais em máquinas automáticas usando N8N, IA e
-            ferramentas modernas. Aprenda comigo.
+            Ensino você a transformar processos manuais em máquinas automáticas usando N8N, IA e
+            outras ferramentas modernas. Venha aprender comigo e se destacar no mercado.
           </p>
 
           <div className="flex flex-wrap gap-4">
