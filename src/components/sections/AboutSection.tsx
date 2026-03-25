@@ -29,85 +29,46 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        {/* 3D Continuous Carousel */}
-        <div className="relative mx-auto mt-20 h-[400px] w-full max-w-[100vw]">
+        {/* 2D Infinite Marquee Carousel */}
+        <div className="relative mx-auto mt-16 w-full max-w-6xl overflow-hidden py-4 mask-edges">
           <style>{`
-            .carousel-scene {
-              perspective: 1000px;
-              width: 100%;
-              height: 100%;
-              position: relative;
-              display: flex;
-              align-items: center;
-              justify-content: center;
+            .mask-edges {
+              mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+              -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             }
-            .carousel-cylinder {
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              transform-style: preserve-3d;
-              animation: rotateCylinder 25s linear infinite;
+            .animate-marquee {
               display: flex;
-              align-items: center;
-              justify-content: center;
+              width: max-content;
+              animation: marquee 25s linear infinite;
             }
-            .carousel-cylinder:hover {
+            .animate-marquee:hover {
               animation-play-state: paused;
             }
-            @keyframes rotateCylinder {
-              0% { transform: translateZ(0) rotateY(0deg); }
-              100% { transform: translateZ(0) rotateY(-360deg); }
-            }
-            .carousel-card-wrapper {
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              margin-left: -130px;
-              margin-top: -170px;
-              width: 260px;
-              height: 340px;
-              backface-visibility: hidden;
-              -webkit-font-smoothing: subpixel-antialiased;
-            }
-            @media (min-width: 768px) {
-              .carousel-card-wrapper {
-                margin-left: -150px;
-                margin-top: -180px;
-                width: 300px;
-                height: 360px;
-              }
-            }
-            /* Radius calculations based on card width */
-            .card-0 { transform: rotateY(0deg) translateZ(200px); }
-            .card-1 { transform: rotateY(90deg) translateZ(200px); }
-            .card-2 { transform: rotateY(180deg) translateZ(200px); }
-            .card-3 { transform: rotateY(270deg) translateZ(200px); }
-            @media (min-width: 768px) {
-              .card-0 { transform: rotateY(0deg) translateZ(250px); }
-              .card-1 { transform: rotateY(90deg) translateZ(250px); }
-              .card-2 { transform: rotateY(180deg) translateZ(250px); }
-              .card-3 { transform: rotateY(270deg) translateZ(250px); }
+            @keyframes marquee {
+              0% { transform: translate3d(0, 0, 0); }
+              100% { transform: translate3d(-50%, 0, 0); }
             }
           `}</style>
-          
-          <div className="carousel-scene">
-            <div className="carousel-cylinder">
-              {teachingPillars.map((pillar, i) => (
-                <div key={pillar.title} className={`carousel-card-wrapper card-${i}`}>
-                   <div 
-                     className="flex flex-col justify-center h-full rounded-xl bg-card border border-border/40 p-6 md:p-8 transition-colors hover:border-primary/60 hover:bg-card subpixel-antialiased"
-                   >
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        {iconMap[pillar.icon]}
-                      </div>
-                      <h3 className="mb-2 font-display text-xl font-bold text-foreground drop-shadow-sm">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-medium">{pillar.description}</p>
-                   </div>
+
+          <div className="animate-marquee gap-6">
+            {[...teachingPillars, ...teachingPillars].map((pillar, i) => (
+              <div 
+                key={`${pillar.title}-${i}`} 
+                className="flex-shrink-0 w-[280px] md:w-[320px]"
+              >
+                <div className="flex flex-col h-full rounded-xl bg-card border border-border/40 p-6 md:p-8 transition-colors hover:border-primary/50 hover:bg-card">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    {iconMap[pillar.icon]}
+                  </div>
+                  <h3 className="mb-2 font-display text-lg font-bold text-foreground">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {pillar.description}
+                  </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
