@@ -34,7 +34,7 @@ const FloatingWhatsApp = () => {
 
           {/* Link do WhatsApp */}
           <a
-            href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20e%20consultorias!"
+            href="https://wa.me/5551997192049?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20e%20consultorias!"
             target="_blank"
             rel="noopener noreferrer"
             className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-colors hover:bg-[#20bd5a]"

@@ -11,10 +11,10 @@ export const siteConfig = {
   description:
     "Aprenda a construir fluxos inteligentes com IA, N8N e ferramentas de automação. Transforme processos manuais em máquinas automáticas.",
   social: {
-    whatsapp: "", // TODO: seu link do WhatsApp
+    whatsapp: "https://wa.me/5551997192049", // TODO: seu link do WhatsApp
     linkedin: "", // TODO: seu perfil LinkedIn
     instagram: "", // TODO: seu perfil Instagram
-    email: "", // TODO: seu email de contato
+    email: "viniciusterra.tech@gmail.com", // TODO: seu email de contato
     youtube: "", // TODO: seu canal YouTube
   },
 };
