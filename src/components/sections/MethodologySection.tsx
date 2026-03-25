@@ -39,11 +39,11 @@ const MethodologySection = () => {
                   {/* Content card */}
                   <div
                     className={`ml-12 w-full max-w-md md:ml-0 md:w-1/2 ${
-                      isEven ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"
+                      isEven ? "md:pr-12 text-left" : "md:pl-12 text-left"
                     } ${isEven ? "" : "md:ml-auto"}`}
                   >
                     <div className="gradient-border overflow-hidden rounded-2xl bg-card p-6 shadow-xl transition-all hover:shadow-2xl hover:shadow-primary/5">
-                      <div className={`mb-4 flex items-center gap-4 ${isEven ? "md:justify-end" : ""}`}>
+                      <div className="mb-4 flex items-center gap-4">
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                           {Icon}
                         </div>
@@ -59,7 +59,7 @@ const MethodologySection = () => {
                       {step.subItems && (
                         <div className="mt-4 flex flex-col gap-3">
                           {step.subItems.map((item, idx) => (
-                            <div key={idx} className={`flex items-start gap-2 ${isEven ? "md:justify-end md:flex-row-reverse" : ""}`}>
+                            <div key={idx} className="flex items-start gap-2">
                               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                               <span className="text-sm text-foreground/80">{item}</span>
                             </div>
