@@ -95,7 +95,10 @@ const AboutSection = () => {
             <div className="carousel-cylinder">
               {teachingPillars.map((pillar, i) => (
                 <div key={pillar.title} className={`carousel-card-wrapper card-${i}`}>
-                   <div className="gradient-border flex flex-col justify-center h-full rounded-xl bg-card p-6 md:p-8 shadow-xl transition-all hover:bg-card/90">
+                   <div 
+                     className="flex flex-col justify-center h-full rounded-xl bg-card border border-border/50 p-6 md:p-8 transition-colors hover:border-primary/50 hover:bg-card/90"
+                     style={{ transform: "translateZ(0)" }}
+                   >
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         {iconMap[pillar.icon]}
                       </div>
