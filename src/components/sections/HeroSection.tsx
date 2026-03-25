@@ -102,7 +102,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full"></div>
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border/40 bg-card shadow-2xl backdrop-blur-sm">
             <img 
-              src="/profile.jpg" 
+              src="/profile.webp" 
               alt="Vinicius Terra" 
               className="h-full w-full object-cover object-center" 
             />

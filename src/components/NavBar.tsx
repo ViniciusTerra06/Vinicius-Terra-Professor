@@ -41,6 +41,7 @@ const NavBar = () => {
             }
           }}
           className="font-display text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+          aria-label="Voltar para a página inicial"
         >
           {siteConfig.name}
         </Link>

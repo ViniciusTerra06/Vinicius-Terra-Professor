@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -7,10 +7,11 @@ import AboutSection from "@/components/sections/AboutSection";
 import MethodologySection from "@/components/sections/MethodologySection";
 import ConsultancySection from "@/components/sections/ConsultancySection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
-import FaqSection from "@/components/sections/FaqSection";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+
+const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
+const FaqSection = lazy(() => import("@/components/sections/FaqSection"));
 
 const Index = () => {
   const location = useLocation();
@@ -37,9 +38,13 @@ const Index = () => {
         <MethodologySection />
         <ConsultancySection />
         <ProjectsSection />
-        <TestimonialsSection />
+        <Suspense fallback={<div className="flex h-40 items-center justify-center"><p className="text-muted-foreground animate-pulse">Carregando depoimentos...</p></div>}>
+          <TestimonialsSection />
+        </Suspense>
         <ContactSection />
-        <FaqSection />
+        <Suspense fallback={<div className="flex h-40 items-center justify-center"><p className="text-muted-foreground animate-pulse">Carregando FAQ...</p></div>}>
+          <FaqSection />
+        </Suspense>
       </main>
       <Footer />
       <FloatingWhatsApp />
