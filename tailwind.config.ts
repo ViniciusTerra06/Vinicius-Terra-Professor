@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         display: ["Space Grotesk", "sans-serif"],
+        signature: ["Great Vibes", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",

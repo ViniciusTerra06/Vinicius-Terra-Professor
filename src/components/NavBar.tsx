@@ -24,10 +24,8 @@ const NavBar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="font-display text-xl font-bold text-foreground">
-          <span className="text-primary">&lt;</span>
+        <Link to="/" className="font-signature text-3xl text-foreground hover:text-primary transition-colors">
           {siteConfig.name}
-          <span className="text-primary">/&gt;</span>
         </Link>
 
         {/* Desktop */}

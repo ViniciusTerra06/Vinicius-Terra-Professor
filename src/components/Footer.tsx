@@ -9,10 +9,8 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <Link to="/" className="font-display text-xl font-bold text-foreground">
-              <span className="text-primary">&lt;</span>
+            <Link to="/" className="font-signature text-4xl text-foreground hover:text-primary transition-colors">
               {siteConfig.name}
-              <span className="text-primary">/&gt;</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">{siteConfig.tagline}</p>
           </div>
