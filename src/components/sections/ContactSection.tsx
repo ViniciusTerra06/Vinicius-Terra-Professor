@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import ContactForm from "@/components/ContactForm";
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle, Instagram } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 const ContactSection = () => {
@@ -17,65 +16,55 @@ const ContactSection = () => {
             Entre em contato
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Quer saber mais sobre os cursos ou tem alguma dúvida? Manda uma mensagem!
+            Quer saber mais sobre as aulas, consultorias ou trocar uma ideia? Escolha a melhor forma de falar comigo!
           </p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-4xl gap-12 md:grid-cols-2">
-          {/* Social links */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
-            <h3 className="font-display text-xl font-semibold text-foreground">
-              Outros canais
-            </h3>
-
-            {[
-              {
-                icon: <MessageCircle size={20} />,
-                label: "WhatsApp",
-                value: siteConfig.social.whatsapp || "Configurar link",
-                href: siteConfig.social.whatsapp || "#",
-              },
-              {
-                icon: <Mail size={20} />,
-                label: "E-mail",
-                value: siteConfig.social.email || "Configurar e-mail",
-                href: siteConfig.social.email
-                  ? `mailto:${siteConfig.social.email}`
-                  : "#",
-              },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/30"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                  <p className="text-xs text-muted-foreground">{item.value}</p>
-                </div>
-              </a>
-            ))}
-          </motion.div>
-
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="mb-6 font-display text-xl font-semibold text-foreground">
-              Envie uma mensagem
-            </h3>
-            <ContactForm />
-          </motion.div>
+        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
+          {[
+            {
+              icon: <MessageCircle size={28} />,
+              label: "WhatsApp",
+              // @ts-ignore
+              value: siteConfig.social.whatsappDisplay || "Configurar número",
+              href: siteConfig.social.whatsapp || "#",
+            },
+            {
+              icon: <Instagram size={28} />,
+              label: "Instagram",
+              // @ts-ignore
+              value: siteConfig.social.instagramDisplay || "@seu_usuario",
+              href: siteConfig.social.instagram || "#",
+            },
+            {
+              icon: <Mail size={28} />,
+              label: "E-mail",
+              value: siteConfig.social.email || "Configurar e-mail",
+              href: siteConfig.social.email
+                ? `mailto:${siteConfig.social.email}`
+                : "#",
+            },
+          ].map((item, index) => (
+            <motion.a
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card p-8 text-center transition-all hover:-translate-y-2 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5"
+            >
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+                {item.icon}
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground">{item.label}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.value}</p>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>
