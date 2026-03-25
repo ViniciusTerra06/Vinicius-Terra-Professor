@@ -30,10 +30,10 @@ const AboutSection = () => {
         </motion.div>
 
         {/* 3D Continuous Carousel */}
-        <div className="relative mx-auto mt-20 h-[450px] md:h-[500px] w-full max-w-[100vw]">
+        <div className="relative mx-auto mt-20 h-[400px] w-full max-w-[100vw]">
           <style>{`
             .carousel-scene {
-              perspective: 1200px;
+              perspective: 1000px;
               width: 100%;
               height: 100%;
               position: relative;
@@ -50,6 +50,7 @@ const AboutSection = () => {
               display: flex;
               align-items: center;
               justify-content: center;
+              will-change: transform;
             }
             .carousel-cylinder:hover {
               animation-play-state: paused;
@@ -62,30 +63,31 @@ const AboutSection = () => {
               position: absolute;
               left: 50%;
               top: 50%;
-              margin-left: -150px;
-              margin-top: -200px;
-              width: 300px;
-              height: 400px;
+              margin-left: -130px;
+              margin-top: -170px;
+              width: 260px;
+              height: 340px;
               backface-visibility: visible;
+              will-change: transform;
             }
             @media (min-width: 768px) {
               .carousel-card-wrapper {
-                margin-left: -200px;
-                margin-top: -225px;
-                width: 400px;
-                height: 450px;
+                margin-left: -150px;
+                margin-top: -180px;
+                width: 300px;
+                height: 360px;
               }
             }
             /* Radius calculations based on card width */
-            .card-0 { transform: rotateY(0deg) translateZ(260px); }
-            .card-1 { transform: rotateY(90deg) translateZ(260px); }
-            .card-2 { transform: rotateY(180deg) translateZ(260px); }
-            .card-3 { transform: rotateY(270deg) translateZ(260px); }
+            .card-0 { transform: rotateY(0deg) translateZ(200px); }
+            .card-1 { transform: rotateY(90deg) translateZ(200px); }
+            .card-2 { transform: rotateY(180deg) translateZ(200px); }
+            .card-3 { transform: rotateY(270deg) translateZ(200px); }
             @media (min-width: 768px) {
-              .card-0 { transform: rotateY(0deg) translateZ(360px); }
-              .card-1 { transform: rotateY(90deg) translateZ(360px); }
-              .card-2 { transform: rotateY(180deg) translateZ(360px); }
-              .card-3 { transform: rotateY(270deg) translateZ(360px); }
+              .card-0 { transform: rotateY(0deg) translateZ(250px); }
+              .card-1 { transform: rotateY(90deg) translateZ(250px); }
+              .card-2 { transform: rotateY(180deg) translateZ(250px); }
+              .card-3 { transform: rotateY(270deg) translateZ(250px); }
             }
           `}</style>
           
@@ -93,14 +95,14 @@ const AboutSection = () => {
             <div className="carousel-cylinder">
               {teachingPillars.map((pillar, i) => (
                 <div key={pillar.title} className={`carousel-card-wrapper card-${i}`}>
-                   <div className="gradient-border flex flex-col justify-center h-full rounded-2xl bg-card p-8 md:p-12 shadow-[0_0_50px_rgba(0,0,0,0.5)] transition-all hover:bg-card/80">
-                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                   <div className="gradient-border flex flex-col justify-center h-full rounded-xl bg-card p-6 md:p-8 shadow-xl transition-all hover:bg-card/90">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         {iconMap[pillar.icon]}
                       </div>
-                      <h3 className="mb-4 font-display text-2xl font-bold text-foreground">
+                      <h3 className="mb-2 font-display text-xl font-bold text-foreground">
                         {pillar.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">{pillar.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{pillar.description}</p>
                    </div>
                 </div>
               ))}
