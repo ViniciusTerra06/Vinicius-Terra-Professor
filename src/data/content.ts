@@ -107,10 +107,9 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const stats = [
-  { value: "2.500+", label: "Alunos" },
-  { value: "150+", label: "Aulas" },
+  { value: "+100", label: "Alunos" },
+  { value: "+300", label: "Aulas" },
   { value: "98%", label: "Satisfação" },
-  { value: "50h+", label: "Conteúdo" },
 ];
 
 export interface FaqItem {

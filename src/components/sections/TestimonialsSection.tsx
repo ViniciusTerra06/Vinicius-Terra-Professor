@@ -17,15 +17,38 @@ const TestimonialsSection = () => {
           </h2>
         </motion.div>
 
-        {/* Testimonials scroll */}
-        <div className="mb-16 flex gap-6 overflow-x-auto pb-4 scrollbar-none">
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.name} testimonial={t} />
-          ))}
+        {/* Infinite Marquee Carousel */}
+        <div className="mb-16 relative mx-auto w-full overflow-hidden mask-edges py-4">
+          <style>{`
+            .mask-edges {
+              mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+              -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            }
+            .animate-marquee-testimonials {
+              display: flex;
+              width: max-content;
+              animation: marqueeTestimonials 40s linear infinite;
+            }
+            .animate-marquee-testimonials:hover {
+              animation-play-state: paused;
+            }
+            @keyframes marqueeTestimonials {
+              0% { transform: translate3d(0, 0, 0); }
+              100% { transform: translate3d(-50%, 0, 0); }
+            }
+          `}</style>
+
+          <div className="animate-marquee-testimonials gap-6">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div key={`${t.name}-${i}`} className="flex-shrink-0 w-[350px] md:w-[450px]">
+                <TestimonialCard testimonial={t} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
