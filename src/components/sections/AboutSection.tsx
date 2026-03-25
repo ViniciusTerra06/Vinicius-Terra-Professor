@@ -50,14 +50,13 @@ const AboutSection = () => {
               display: flex;
               align-items: center;
               justify-content: center;
-              will-change: transform;
             }
             .carousel-cylinder:hover {
               animation-play-state: paused;
             }
             @keyframes rotateCylinder {
-              0% { transform: rotateY(0deg); }
-              100% { transform: rotateY(-360deg); }
+              0% { transform: translateZ(0) rotateY(0deg); }
+              100% { transform: translateZ(0) rotateY(-360deg); }
             }
             .carousel-card-wrapper {
               position: absolute;
@@ -67,8 +66,8 @@ const AboutSection = () => {
               margin-top: -170px;
               width: 260px;
               height: 340px;
-              backface-visibility: visible;
-              will-change: transform;
+              backface-visibility: hidden;
+              -webkit-font-smoothing: subpixel-antialiased;
             }
             @media (min-width: 768px) {
               .carousel-card-wrapper {
@@ -96,16 +95,15 @@ const AboutSection = () => {
               {teachingPillars.map((pillar, i) => (
                 <div key={pillar.title} className={`carousel-card-wrapper card-${i}`}>
                    <div 
-                     className="flex flex-col justify-center h-full rounded-xl bg-card border border-border/50 p-6 md:p-8 transition-colors hover:border-primary/50 hover:bg-card/90"
-                     style={{ transform: "translateZ(0)" }}
+                     className="flex flex-col justify-center h-full rounded-xl bg-card border border-border/40 p-6 md:p-8 transition-colors hover:border-primary/60 hover:bg-card subpixel-antialiased"
                    >
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         {iconMap[pillar.icon]}
                       </div>
-                      <h3 className="mb-2 font-display text-xl font-bold text-foreground">
+                      <h3 className="mb-2 font-display text-xl font-bold text-foreground drop-shadow-sm">
                         {pillar.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{pillar.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-medium">{pillar.description}</p>
                    </div>
                 </div>
               ))}
