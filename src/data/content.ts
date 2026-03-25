@@ -40,52 +40,39 @@ export const tools = [
   "PostgreSQL",
 ];
 
-export interface Course {
+export interface MethodologyStep {
   id: string;
   title: string;
   description: string;
-  tools: string[];
-  level: string;
-  price: string;
-  bestSeller?: boolean;
-  ctaLabel: string;
-  ctaUrl: string;
+  subItems?: string[];
+  icon: string;
 }
 
-export const courses: Course[] = [
+export const methodologySteps: MethodologyStep[] = [
   {
-    id: "n8n-masterclass",
-    title: "N8N Masterclass",
+    id: "passo-1",
+    title: "1. Contato e Alinhamento",
     description:
-      "Do zero ao avançado: construa automações poderosas com N8N, integrando APIs, bancos de dados e IA.",
-    tools: ["N8N", "PostgreSQL", "ChatGPT"],
-    level: "Iniciante → Avançado",
-    price: "R$ 497",
-    bestSeller: true,
-    ctaLabel: "Quero me inscrever",
-    ctaUrl: "#contato",
+      "Primeiro encontro estratégico. Vamos alinhar suas expectativas, entender seu nível de conhecimento técnico, apresentar a dinâmica das aulas e combinar detalhes importantes como métodos de pagamento, para que tudo flua com transparência.",
+    icon: "MessageSquare",
   },
   {
-    id: "ia-automacao",
-    title: "IA + Automação",
+    id: "passo-2",
+    title: "2. Aulas Práticas (Mão na Massa)",
     description:
-      "Aprenda a integrar modelos de IA nos seus fluxos. GPT, análise de sentimento, geração de conteúdo e muito mais.",
-    tools: ["ChatGPT", "N8N", "Make"],
-    level: "Intermediário",
-    price: "R$ 397",
-    ctaLabel: "Saiba mais",
-    ctaUrl: "#contato",
+      "Construímos as automações juntos. O modelo da aula se molda exatamente ao que você precisa:",
+    subItems: [
+      "Para Iniciantes: Abordagem cuidadosa dos fundamentos da ferramenta. Avanço gradual, mas sempre com a mão na massa desde o dia um.",
+      "Para Avançados: Foco absoluto em fluxos complexos, ideias específicas e gargalos difíceis que você precisa resolver hoje."
+    ],
+    icon: "Settings",
   },
   {
-    id: "automacao-whatsapp",
-    title: "Automação para WhatsApp",
+    id: "passo-3",
+    title: "3. Autonomia Completa",
     description:
-      "Crie chatbots inteligentes e fluxos de atendimento automatizado via WhatsApp Business API.",
-    tools: ["WhatsApp API", "N8N", "Telegram"],
-    level: "Intermediário",
-    price: "R$ 347",
-    ctaLabel: "Saiba mais",
-    ctaUrl: "#contato",
+      "O objetivo final não é manter você dependente das aulas, mas sim conquistar a liberdade. Você sai com as automações rodando no seu negócio e totalmente capaz de criá-las ou mantê-las sozinho.",
+    icon: "Rocket",
   },
 ];
 
@@ -133,34 +120,34 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Preciso saber programar para fazer os cursos?",
+    question: "Preciso saber programar para fazer as aulas?",
     answer:
-      "Não! Os cursos são pensados para iniciantes. Usamos ferramentas no-code e low-code que permitem criar automações poderosas sem escrever código.",
+      "Não! O foco das nossas aulas é em ferramentas no-code e low-code (como N8N, Make, Zapier). Você aprenderá a construir integrações poderosas pela lógica, sem precisar escrever código.",
   },
   {
-    question: "Por quanto tempo tenho acesso ao curso?",
+    question: "Como funciona o agendamento das aulas?",
     answer:
-      "Acesso vitalício. Comprou, é seu para sempre, incluindo todas as atualizações futuras.",
+      "As datas e horários são definidos de forma flexível no nosso primeiro contato, adaptando-se à sua rotina e ao seu ritmo de aprendizado.",
   },
   {
     question: "Quais ferramentas vou aprender a usar?",
     answer:
-      "Depende do curso. Trabalhamos com N8N, Make, Zapier, ChatGPT API, Google Sheets, Slack, Notion, WhatsApp Business API e muito mais.",
+      "Aulas totalmente personalizadas. Podemos focar em N8N, Make, Zapier, ChatGPT API, Google Sheets, WhatsApp Business API ou o que for melhor para o seu projeto.",
   },
   {
-    question: "Tem certificado?",
+    question: "As aulas são gravadas?",
     answer:
-      "Sim! Todos os cursos emitem certificado de conclusão que pode ser adicionado ao seu LinkedIn.",
+      "Sim! Se desejar, as aulas são 100% gravadas e o material fica disponível para você revisar quantas vezes e quando quiser.",
   },
   {
-    question: "Como funciona o suporte?",
+    question: "Como funciona o suporte entre as aulas?",
     answer:
-      "Você terá acesso à comunidade exclusiva no Discord, além de sessões de Q&A ao vivo semanais.",
+      "Você terá contato direto comigo via WhatsApp/Discord para tirar dúvidas e destravar eventuais problemas nos fluxos enquanto treina entre nossas sessões.",
   },
   {
-    question: "Posso pedir reembolso?",
+    question: "Posso trazer projetos reais do meu trabalho?",
     answer:
-      "Sim. Garantia incondicional de 7 dias. Se não gostar, devolvemos 100% do valor.",
+      "Com certeza! Esse é o maior objetivo: usar as aulas para criarmos juntos soluções reais que você possa usar imediatamente no seu negócio ou emprego.",
   },
 ];
 

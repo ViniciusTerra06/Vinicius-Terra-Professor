@@ -21,13 +21,20 @@ const Footer = () => {
               Links
             </h4>
             <div className="flex flex-col gap-2">
-              {["Sobre", "Cursos", "Depoimentos", "FAQ", "Contato", "Blog"].map((l) => (
+              {[
+                { label: "Sobre", href: "#sobre" },
+                { label: "Como Funciona", href: "#como-funciona" },
+                { label: "Depoimentos", href: "#depoimentos" },
+                { label: "FAQ", href: "#faq" },
+                { label: "Contato", href: "#contato" },
+                { label: "Blog", href: "/blog" },
+              ].map((l) => (
                 <a
-                  key={l}
-                  href={l === "Blog" ? "/blog" : `#${l.toLowerCase()}`}
+                  key={l.label}
+                  href={l.href}
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  {l}
+                  {l.label}
                 </a>
               ))}
             </div>
