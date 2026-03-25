@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, BarChart3, Clock, Zap } from "lucide-react";
+import { BarChart3, Clock, Zap } from "lucide-react";
 
 const projects = [
   {
@@ -62,10 +62,6 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5, delay: project.delay }}
               className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-2 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5"
             >
-              <div className="absolute right-6 top-8 opacity-0 transition-opacity group-hover:opacity-100">
-                <ArrowUpRight className="h-6 w-6 text-primary" />
-              </div>
-              
               <div>
                 <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
                   {project.icon}
