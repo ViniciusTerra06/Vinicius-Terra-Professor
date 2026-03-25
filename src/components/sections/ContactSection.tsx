@@ -25,14 +25,12 @@ const ContactSection = () => {
             {
               icon: <MessageCircle size={28} />,
               label: "WhatsApp",
-              // @ts-ignore
               value: siteConfig.social.whatsappDisplay || "Configurar número",
               href: siteConfig.social.whatsapp || "#",
             },
             {
               icon: <Instagram size={28} />,
               label: "Instagram",
-              // @ts-ignore
               value: siteConfig.social.instagramDisplay || "@seu_usuario",
               href: siteConfig.social.instagram || "#",
             },

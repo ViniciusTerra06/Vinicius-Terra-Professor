@@ -1,32 +1,12 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { heroHeadlines, tools } from "@/data/content";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ToolBadge from "@/components/ToolBadge";
 import { ArrowRight, Play } from "lucide-react";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
 const HeroSection = () => {
-  const [headlineIndex, setHeadlineIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = heroHeadlines[headlineIndex];
-    let timeout: NodeJS.Timeout;
-
-    if (!isDeleting && displayText.length < current.length) {
-      timeout = setTimeout(() => setDisplayText(current.slice(0, displayText.length + 1)), 80);
-    } else if (!isDeleting && displayText.length === current.length) {
-      timeout = setTimeout(() => setIsDeleting(true), 2000);
-    } else if (isDeleting && displayText.length > 0) {
-      timeout = setTimeout(() => setDisplayText(current.slice(0, displayText.length - 1)), 40);
-    } else if (isDeleting && displayText.length === 0) {
-      setIsDeleting(false);
-      setHeadlineIndex((prev) => (prev + 1) % heroHeadlines.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, headlineIndex]);
+  const displayText = useTypewriter(heroHeadlines);
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">

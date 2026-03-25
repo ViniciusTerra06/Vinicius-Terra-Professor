@@ -57,7 +57,7 @@ const AboutSection = () => {
                 className="flex-shrink-0 w-[280px] md:w-[320px]"
               >
                 <div className="flex flex-col h-full rounded-xl bg-card border border-border/40 p-6 md:p-8 transition-colors hover:border-primary/50 hover:bg-card">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary" aria-hidden="true">
                     {iconMap[pillar.icon]}
                   </div>
                   <h3 className="mb-2 font-display text-lg font-bold text-foreground">
