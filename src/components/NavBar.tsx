@@ -30,7 +30,10 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+    <nav 
+      className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
+      aria-label="Navegação principal"
+    >
       <div className="w-full flex h-16 items-center justify-between px-6 md:px-12 lg:px-20">
         <Link 
           to="/" 
@@ -63,7 +66,9 @@ const NavBar = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-foreground md:hidden"
-          aria-label="Toggle menu"
+          aria-label="Alternar menu mobile"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -73,6 +78,7 @@ const NavBar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

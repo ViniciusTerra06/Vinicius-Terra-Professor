@@ -84,6 +84,11 @@ const HeroSection = () => {
             <img 
               src="/profile.webp" 
               alt="Vinicius Terra" 
+              width={480}
+              height={600}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-full w-full object-cover object-center" 
             />
             {/* Estética Neon Dark */}
