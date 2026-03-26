@@ -30,10 +30,10 @@ describe("HeroSection Component", () => {
     expect(img).toHaveAttribute("loading", "eager");
 
     // The links / CTAs
-    const linkAulas = screen.getByRole("link", { name: /Aulas e Consultorias/i });
-    expect(linkAulas).toHaveAttribute("href", "#como-funciona");
+    const linkAulas = screen.getByRole("link", { name: /Falar no WhatsApp/i });
+    expect(linkAulas).toHaveAttribute("href", expect.stringContaining("wa.me"));
     
-    const linkConhecer = screen.getByRole("link", { name: /Conhecer mais/i });
-    expect(linkConhecer).toHaveAttribute("href", "#sobre");
+    const linkConhecer = screen.getByRole("link", { name: /Ver Metodologia/i });
+    expect(linkConhecer).toHaveAttribute("href", "#como-funciona");
   });
 });

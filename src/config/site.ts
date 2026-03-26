@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Aprenda a construir fluxos inteligentes com IA, N8N e ferramentas de automação. Transforme processos manuais em máquinas automáticas.",
   social: {
-    whatsapp: "https://wa.me/5551997192049", 
+    whatsapp: "https://wa.me/5551997192049?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Aulas/Consultorias", 
     whatsappDisplay: "+55 51 99719-2049",
     linkedin: "", 
     instagram: "https://www.instagram.com/viniciusterra.dev/", 

@@ -40,16 +40,18 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#como-funciona"
+              href="https://wa.me/5551997192049?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Aulas/Consultorias"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none transition-all hover:bg-primary/90 glow-teal"
             >
-              Aulas e Consultorias <ArrowRight size={16} />
+              Falar no WhatsApp <ArrowRight size={16} />
             </a>
             <a
-              href="#sobre"
+              href="#como-funciona"
               className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-3 font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none transition-all hover:border-primary/50 hover:text-primary"
             >
-              <Play size={16} /> Conhecer mais
+              <Play size={16} /> Ver Metodologia
             </a>
           </div>
 

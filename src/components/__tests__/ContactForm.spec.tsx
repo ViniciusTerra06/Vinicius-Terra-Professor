@@ -20,15 +20,15 @@ describe("ContactForm Component", () => {
     render(<ContactForm />);
     expect(screen.getByPlaceholderText(/Seu nome/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Seu e-mail/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Enviar mensagem/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Agendar minha primeira aula/i })).toBeInTheDocument();
   });
 
   it("shows an error when trying to submit empty fields", async () => {
     render(<ContactForm />);
-    fireEvent.click(screen.getByRole("button", { name: /Enviar/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Agendar minha primeira aula/i }));
     
     await waitFor(() => {
-      expect(sonner.toast.error).toHaveBeenCalledWith("Preencha todos os campos.");
+      expect(sonner.toast.error).toHaveBeenCalledWith("Preencha seu nome e e-mail.");
     });
   });
 

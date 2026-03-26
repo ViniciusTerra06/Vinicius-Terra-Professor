@@ -49,7 +49,9 @@ const ConsultancySection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
           >
-            Ajudo empresas e equipes a eliminar processos manuais, reduzindo custos e multiplicando a eficiência da operação com automações especializadas.
+            Ajudo empresas e equipes a eliminar processos manuais. Uma automação bem estruturada salva meses de salário humano e permite que seu time foque no que realmente importa.
+            <br/><br/>
+            <span className="font-semibold text-primary">Atenção:</span> Devido à minha agenda atual de projetos, possuo vagas muito limitadas para novos atendimentos de consultoria neste mês.
           </motion.p>
         </div>
 

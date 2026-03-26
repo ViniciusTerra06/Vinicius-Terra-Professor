@@ -25,7 +25,7 @@ describe("NavBar Component", () => {
 
   it("toggles the mobile menu when clicking the menu button", () => {
     renderWithRouter(<NavBar />);
-    const menuButton = screen.getByLabelText(/Toggle menu/i);
+    const menuButton = screen.getByLabelText(/Alternar menu mobile/i);
     
     // Initial state: mobile menu shouldn't be fully expanded, but Framer Motion might keep it in DOM with height 0
     // Click to open
