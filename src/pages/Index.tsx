@@ -18,11 +18,14 @@ const Index = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        // Pequeno delay para garantir que qualquer animação de menu (mobile) não interfira
+        const scrollTimeout = setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 10);
+        return () => clearTimeout(scrollTimeout);
       }
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });

@@ -24,8 +24,8 @@ const NavBar = () => {
     if (location.pathname !== "/") {
       navigate(`/${href}`);
     } else {
-      const el = document.querySelector(href);
-      el?.scrollIntoView({ behavior: "smooth" });
+      // Atualiza o hash na URL, o useEffect no Index.tsx cuidará do scroll
+      window.location.hash = href;
     }
   };
 

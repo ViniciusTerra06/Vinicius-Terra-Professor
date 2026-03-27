@@ -27,11 +27,16 @@ describe("NavBar Component", () => {
     renderWithRouter(<NavBar />);
     const menuButton = screen.getByLabelText(/Alternar menu mobile/i);
     
-    // Initial state: mobile menu shouldn't be fully expanded, but Framer Motion might keep it in DOM with height 0
     // Click to open
     fireEvent.click(menuButton);
-    // There are 2 sets of links (desktop and mobile), so calling getAllByText is safer
     const aboutLinks = screen.getAllByText(/Sobre/i);
     expect(aboutLinks.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("updates the URL hash when a navigation link is clicked", () => {
+    renderWithRouter(<NavBar />);
+    const aboutLink = screen.getAllByText(/Sobre/i)[0]; // Use the first one (desktop)
+    fireEvent.click(aboutLink);
+    expect(window.location.hash).toBe("#sobre");
   });
 });
