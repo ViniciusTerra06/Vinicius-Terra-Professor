@@ -1,8 +1,6 @@
-# Vinicius Terra — Portfólio (Professor de Automação & IA)
+# Vinicius Terra (Professor de Automação & IA)
 
 Site pessoal de **Vinicius Terra**, professor de automação. O portfólio apresenta minhas aulas, metodologia de ensino, consultoria e cases de alunos e clientes.
-
-> Hoje o foco é 100% professor. Uma seção de portfólio como **desenvolvedor** (projetos de código, stack, contribuições) está planejada para uma etapa futura do site.
 
 🔗 Produção: [vinicius-terra-professor.vercel.app](https://vinicius-terra-professor.vercel.app/)
 
@@ -10,15 +8,15 @@ Site pessoal de **Vinicius Terra**, professor de automação. O portfólio apres
 
 Página única (landing page) organizada em seções, contando quem sou, o que ensino e como funcionam minhas aulas:
 
-- **Hero** — apresentação e chamada principal (Professor de Automação / Especialista em N8N / Construtor de Fluxos com IA).
-- **Sobre** — por que aprender comigo: prática imediata, IA aplicada, suporte direto, resultados reais.
-- **Metodologia** — como funcionam as aulas, em 3 passos: contato/alinhamento, aulas práticas mão na massa (adaptadas a iniciantes ou avançados) e autonomia completa ao final.
-- **Consultoria** — atendimento estratégico para empresas que querem automatizar processos (diagnóstico, implementação e acompanhamento).
-- **Projetos / Cases** — exemplos reais de automações entregues e seus resultados (agendamentos, redução de inadimplência, horas economizadas).
-- **Depoimentos** — feedback de alunos.
-- **Blog** — artigos sobre automação e IA.
-- **FAQ** — dúvidas comuns sobre as aulas (pré-requisitos, agendamento, ferramentas, gravação, suporte).
-- **Contato** — formulário e WhatsApp direto.
+- **Hero** - apresentação e chamada principal (Professor de Automação / Especialista em N8N / Construtor de Fluxos com IA).
+- **Sobre** - por que aprender comigo: prática imediata, IA aplicada, suporte direto, resultados reais.
+- **Metodologia** - como funcionam as aulas, em 3 passos: contato/alinhamento, aulas práticas mão na massa (adaptadas a iniciantes ou avançados) e autonomia completa ao final.
+- **Consultoria** - atendimento estratégico para empresas que querem automatizar processos (diagnóstico, implementação e acompanhamento).
+- **Projetos / Cases** - exemplos reais de automações entregues e seus resultados (agendamentos, redução de inadimplência, horas economizadas).
+- **Depoimentos** - feedback de alunos.
+- **Blog** - artigos sobre automação e IA.
+- **FAQ** - dúvidas comuns sobre as aulas (pré-requisitos, agendamento, ferramentas, gravação, suporte).
+- **Contato** - formulário e WhatsApp direto.
 
 ## Assuntos abordados nas aulas
 
