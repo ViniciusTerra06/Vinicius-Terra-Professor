@@ -17,8 +17,8 @@ export const teachingPillars = [
   },
   {
     icon: "Users",
-    title: "Comunidade Ativa",
-    description: "Suporte e networking com outros automatizadores.",
+    title: "Suporte Direto",
+    description: "Tira-dúvidas comigo entre uma aula e outra.",
   },
   {
     icon: "TrendingUp",
@@ -32,6 +32,8 @@ export const tools = [
   "Make",
   "Zapier",
   "ChatGPT",
+  "Claude",
+  "Claude Code",
   "Google Sheets",
   "Slack",
   "Notion",
@@ -102,7 +104,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Pedro Alves",
     role: "Gestor de Projetos",
-    text: "A comunidade é sensacional. Sempre tem alguém pra ajudar e os cases de outros alunos inspiram demais.",
+    text: "Didática direta ao ponto. Em poucas aulas já tinha um fluxo rodando de verdade, resolvendo um problema que travava minha equipe há meses.",
   },
 ];
 

@@ -24,7 +24,7 @@ const AboutSection = () => {
             Por que aprender comigo?
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Didática prática, comunidade ativa e foco em resultados reais. Meus
+            Didática prática, suporte direto comigo e foco em resultados reais. Meus
             alunos automatizam processos desde a primeira semana.
           </p>
         </motion.div>
