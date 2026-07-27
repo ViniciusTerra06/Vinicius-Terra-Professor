@@ -57,8 +57,3 @@ npm run lint       # lint do código
 npm run test       # testes unitários (vitest)
 npm run preview    # preview do build de produção
 ```
-
-## Roadmap
-
-- [ ] Seção de portfólio como **desenvolvedor** (projetos de código próprios)
-- [ ] Conteúdo dedicado sobre aulas de **Claude/Anthropic**
